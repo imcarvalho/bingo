@@ -1,0 +1,31 @@
+Arguments: 
+  /Users/ines/.nvm/versions/node/v17.5.0/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js init -y
+
+PATH: 
+  /Users/ines/.nvm/versions/node/v17.5.0/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/ines/.nvm/versions/node/v17.5.0/bin:/Users/ines/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/ines/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/ines/.antigen/bundles/zsh-users/zsh-autosuggestions:/Users/ines/.antigen/bundles/chrissicool/zsh-256color:/Users/ines/.antigen/bundles/MichaelAquilina/zsh-auto-notify:/Users/ines/.antigen/bundles/djui/alias-tips
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  17.5.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/ines/Documents/work/bingo/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
