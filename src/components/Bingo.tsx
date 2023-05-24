@@ -1,4 +1,13 @@
 import React, { useState } from 'react';
+import {
+  GlobalStyle,
+  Wrapper,
+  GetNewNumberButton,
+  WinnerCard,
+  WinnerWrapper,
+  NumbersOut,
+  LatestNumber,
+} from './Bingo.styles';
 import { cards } from './cards';
 
 function randomIntFromInterval(min: number, max: number) {
@@ -14,9 +23,8 @@ export const Bingo = () => {
   const [winners, setWinners] = useState<number[]>([]);
 
   const checkCards = (newNumbers: number[]) => {
-    const results = cards.map((card) => checkSubset(newNumbers, card));
-
     const winnerCards: number[] = [];
+    const results = cards.map((card) => checkSubset(newNumbers, card));
 
     results.forEach((result, index) => {
       if (result === true) {
@@ -43,23 +51,30 @@ export const Bingo = () => {
 
   return (
     <>
-      <h1>Bingo incrível</h1>
-      <button
-        onClick={handleOnGetNewNumber}
-        disabled={numbersOut.length === 50}
-      >
-        Novo número
-      </button>
-      <p>Números que já saíram ({numbersOut.length}):</p>
-      <p>{numbersOut.join(', ')}</p>
-      {winners.length > 0 &&
-        winners.map((winner) => (
-          <>
-            <h2>Cartão vencedor!</h2>
-            <strong>{winner}</strong>
-            <p>{cards[winner - 1].join(', ')}</p>
-          </>
-        ))}
+      <GlobalStyle />
+      <Wrapper>
+        <WinnerWrapper>
+          {winners.length > 0 && (
+            <>
+              <h1>Cartão vencedor!</h1>
+              <WinnerCard>{winners.join(' ')}</WinnerCard>
+              {winners.length < 3 &&
+                winners.map((winner) => <p>{cards[winner - 1].join(', ')}</p>)}
+            </>
+          )}
+        </WinnerWrapper>
+        <LatestNumber>{numbersOut[numbersOut.length - 1]}</LatestNumber>
+        <NumbersOut>
+          Números que já saíram ({numbersOut.length}): <br />
+          {numbersOut.join(', ')}
+        </NumbersOut>
+        <GetNewNumberButton
+          onClick={handleOnGetNewNumber}
+          disabled={numbersOut.length === 50}
+        >
+          Novo número
+        </GetNewNumberButton>
+      </Wrapper>
     </>
   );
 };
